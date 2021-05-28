@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import ContactForm from '../Components/ContactsForm/ContactsForm';
 import Filter from '../Components/Filter/Filter';
 import ContactsList from '../Components/ContactsList/ContactsList';
-
 import contactsOperations from '../redux/contacts/operations';
 import contactsSelectors from '../redux/contacts/selectors';
+import styles from './HomePage/HomePage.module.css';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -17,22 +17,14 @@ export default function ContactsPage() {
 
   useEffect(() => {
     dispatch(contactsOperations.fetchContacts());
-  }, [dispatch]);
-
-  useEffect(() => {
-    document.title = 'Contacts list | Phonebook';
-  }, []);
+  }, [dispatch]);  
 
   return (
-    <main>
+    <main className={styles.container}>
       <ContactForm />
-
       <Filter />
-
       <ContactsList />
-
       {isLoadingContacts && 'Loading...'}
-
       {isError && <alert severity="error">{isError}</alert>}
     </main>
   );

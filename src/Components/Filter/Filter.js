@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import contactsSelectors from '../../redux/contacts/selectors';
 import contactsActions from '../../redux/contacts/actions';
-
 import styles from './Filter.module.css';
 
 export default function Filter() {
@@ -20,11 +19,9 @@ export default function Filter() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Contacts</h2>
-
+      <h2>Search</h2>
       <label className={styles.label}>
         <span className={styles.text}>Find contacts by name</span>
-
         <input
           type="text"
           name="filter"

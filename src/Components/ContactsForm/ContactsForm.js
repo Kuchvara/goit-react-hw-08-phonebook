@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import contactsOperations from '../../redux/contacts/operations';
 import contactsSelectors from '../../redux/contacts/selectors';
 
-// import AddContactButton from '../AddContactButton';
-
 import styles from './ContactsForm.module.css';
 
 const initialState = {
@@ -12,17 +10,15 @@ const initialState = {
   number: '',
 };
 
-// Компонент формы добавления контакта
 export default function ContactForm() {
   const [state, setState] = useState(initialState);
   const { name, number } = state;
 
-  const contacts = useSelector(contactsSelectors.getContacts); // Селектор всех контактов
-  const isLoading = useSelector(contactsSelectors.getLoading); // Селектор статуса загрузки
+  const contacts = useSelector(contactsSelectors.getContacts);
+  const isLoading = useSelector(contactsSelectors.getLoading);
 
   const dispatch = useDispatch();
 
-  // Диспатчит операцию добавления контакта + useCallback
   const onSubmit = useCallback(
     (name, number) => {
       dispatch(contactsOperations.addContact(name, number));
@@ -30,9 +26,8 @@ export default function ContactForm() {
     [dispatch],
   );
 
-  // Следит за инпутом
-  const hanldeChange = e => {
-    const { name, value } = e.currentTarget;
+  const hanldeChange = event => {
+    const { name, value } = event.currentTarget;
 
     setState(prev => ({
       ...prev,
@@ -40,32 +35,26 @@ export default function ContactForm() {
     }));
   };
 
-  // Метод на отправке формы
-  const hanldeSubmit = e => {
-    e.preventDefault();
+  const hanldeSubmit = event => {
+    event.preventDefault();
 
     const normalizedName = name.toLowerCase();
 
-    // Проверка на дубликат по имени
     const nameInContacts = contacts.find(
       contact => contact.name === normalizedName,
     );
 
-    // Проверка на дубликат по номеру
     const numberInContacts = contacts.find(
       contact => contact.number === number,
     );
 
-    // Отправка имени и номера после проверки
     if (!nameInContacts && !numberInContacts) {
-      onSubmit(normalizedName, number); // Вызов операции добавления контакта
-
+      onSubmit(normalizedName, number);
       resetForm();
       return;
     }   
   };
 
-  // Сброс полей формы (после отправки)
   const resetForm = () => {
     setState(initialState);
   };
@@ -74,7 +63,6 @@ export default function ContactForm() {
     <form className={styles.form} onSubmit={hanldeSubmit}>
       <label className={styles.label}>
         <span className={styles.text}>Name</span>
-
         <input
           type="text"
           name="name"
@@ -89,10 +77,8 @@ export default function ContactForm() {
           required
         />
       </label>
-
       <label className={styles.label}>
         <span className={styles.text}>Number</span>
-
         <input
           type="tel"
           name="number"
@@ -107,7 +93,6 @@ export default function ContactForm() {
           required
         />
       </label>
-
       <div className={styles.container}>
       <button type="submit" className={styles.button} disabled={isLoading}>
         Add contact

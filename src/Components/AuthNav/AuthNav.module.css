@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+}
+
+.item {
+  margin-right: 15px;
+}
+
+.link {
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+}

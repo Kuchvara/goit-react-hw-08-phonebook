@@ -7,7 +7,7 @@ import PrivateRoute from './Components/PrivateRoute';
 import PublicRoute from './Components/PublicRoute';
 
 const HomePage = lazy(() =>
-  import('./Pages/HomePage.js' /* webpackChunkName: "homePage" */),
+  import('./Pages/HomePage/HomePage' /* webpackChunkName: "homePage" */),
 );
 const ContactsPage = lazy(() =>
   import('./Pages/ContactsPage.js' /* webpackChunkName: "contactsPage" */),
@@ -16,7 +16,7 @@ const RegistrationPage = lazy(() =>
   import('./Pages/RegistrationPage.js' /* webpackChunkName: "registerPage" */),
 );
 const LoginPage = lazy(() =>
-  import('./Pages/LoginPage.js' /* webpackChunkName: "loginPage" */),
+  import('./Pages/LoginPage/LoginPage.js' /* webpackChunkName: "loginPage" */),
 );
 
 const App = () => {

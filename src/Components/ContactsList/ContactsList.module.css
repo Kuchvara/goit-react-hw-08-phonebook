@@ -1,16 +1,35 @@
-.contacts_button {
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: rgb(122, 226, 226);
-}
-
-.contacts_button:hover,
-.contacts_button:focus {
-  background-color: #1976d2;
-}
-
-.contacts_text {
-  display: inline-block;
-  margin-right: 15px;
+.list {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: calc(100% / 1 - 15px);
+  padding: 15px 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.name {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.number {
+  margin-right: 15px;
+  color: #000000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
 }

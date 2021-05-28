@@ -1,0 +1,35 @@
+.form {
+  width: 100%;
+  margin: 0px auto 15px;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.text {
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 11px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  line-height: normal;
+}
+
+.container {
+  text-align: center;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}

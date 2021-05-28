@@ -12,21 +12,13 @@ export default function Navigation() {
         <li className={styles.item}>
           <NavLink
             exact
-            to='/'
-            className={styles.link}
+            to='/'            
             activeClassName={styles['link--active']}
-          >
-            Home
-          </NavLink>
+          >Home</NavLink>
         </li>
-
         {isAuthenticated && (
-          <li>
-            <NavLink
-              to='/contacts'
-              className={styles.link}
-              activeClassName={styles['link--active']}
-            >
+          <li className={styles.item}>
+            <NavLink to='/contacts'>
               Contacts
             </NavLink>
           </li>

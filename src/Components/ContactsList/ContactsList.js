@@ -26,6 +26,7 @@ export default function ContactsList() {
               {contact.number}
             </a>
           <button
+            className={styles.button}
             onClick={() => onDeleteContact(contact.id)}
             aria-label="Delete contact">
             Delete

@@ -1,0 +1,32 @@
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.thumb {
+  width: 32px;
+  margin-right: 10px;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.welcome {
+  margin-right: 10px;
+}
+
+.email {
+  font-weight: 500;
+}
