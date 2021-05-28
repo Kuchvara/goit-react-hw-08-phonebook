@@ -1,0 +1,16 @@
+.contacts_button {
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgb(122, 226, 226);
+}
+
+.contacts_button:hover,
+.contacts_button:focus {
+  background-color: #1976d2;
+}
+
+.contacts_text {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}

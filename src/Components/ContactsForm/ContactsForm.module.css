@@ -1,0 +1,10 @@
+.form {
+  outline: 2px solid teal;
+  padding: 10px;
+  width: 400px;
+}
+
+.form_item {
+  display: block;
+  margin-bottom: 10px;
+}
